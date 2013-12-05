@@ -22,6 +22,21 @@ Or using the default python package management:
 
 Or you can just use it as a uninstalled script.
 
+### CentOS/RHEL 5 Installation
+
+If you're using CentOS/RHEL 5 with built in Python 2.4, its possible to use the additional Python 2.6 (python26) installation to run cass_snapshot_link.
+
+```
+yum -y install git python26 python26-devel python-setuptools
+cp -R /usr/lib/python2.4/site-packages/setuptools* /usr/lib/python2.6/site-packages/
+cp -R /usr/lib/python2.4/site-packages/pkg_resources.py* /usr/lib/python2.6/site-packages/
+git clone https://github.com/amorton/cass_snapshot_link
+cd cass_snapshot_link
+python26 setup.py install
+```
+
+To run cass_snapshot_link: `python26 cass_snapshot_link OPTS`
+
 ## Usage
 
 It's all on the command line. 
